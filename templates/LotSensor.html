@@ -1,0 +1,6 @@
+<!-- templates/home.html -->
+<ul>
+{% for lot in Lot_List %}
+<li> Lot #{{ lot.lotNum }} - Capcity:{{lot.currOccp}}/{{lot.maxCap}} <a href="{{url_for('mainPage') ~ '/'~lot.lotNum}} "><button type="button">More Info</button></a> </li>
+{% endfor %}
+</ul>
