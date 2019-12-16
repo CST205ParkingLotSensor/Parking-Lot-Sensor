@@ -7,7 +7,7 @@
 
 {% block body %}
 
-    <p>Lot #{{Lot.lotNum}}</p>
+    <p>Lot {{Lot.lotName}}</p>
     <p>Current Occupancy: {{Lot.currOccp}}</p>
     <p>Maxium Occupancy: {{Lot.maxCap}}</p>
     <p>Remaining spots: {{Lot.maxCap - Lot.currOccp}}</p>

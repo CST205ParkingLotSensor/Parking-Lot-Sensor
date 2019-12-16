@@ -1,16 +1,24 @@
-<!-- templates/home.html -->
+<!-- templates/LotSensor.html -->
 {% extends 'base.html' %}
 
 {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <h1>Lot Sensor</h1>
 {% endblock %}
 
 {% block body %}
-
-    <ul>
-    {% for lot in Lot_List %}
-    <li> Lot #{{ lot.lotNum }} - Capcity:{{lot.currOccp}}/{{lot.maxCap}} <a href="{{url_for('mainPage') ~ '/'~lot.lotNum}} "><button type="button">More Info</button></a> </li>
-    {% endfor %}
-    </ul>
-
+<table>
+	<tr>
+		<th>Lot</th>
+		<th>Current Capacity</th>
+		<th>Details</th>
+	</tr>
+{% for lot in Lot_List %}
+<tr>
+	<td>{{ lot.lotName }}</td>
+	<td>{{lot.currOccp}}/{{lot.maxCap}}</td>
+	<td> <a href="{{url_for('mainPage') ~ '/'~lot.lotName}} "><button type="button">More Info</button></a> </td>
+</tr>
+{% endfor %}
+</table>
 {% endblock %}

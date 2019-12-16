@@ -1,0 +1,37 @@
+<!-- templates/Config.html -->
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<h1>Lot Sensor Config</h1>
+{% endblock %}
+
+{% block body %}
+<table>
+	<tr>
+		<th>Lot</th>
+		<th>Max Capacity</th>
+		<th>Imgage Source</th>
+	</tr>
+{% for lot in Lot_List %}
+<tr>
+	<td>{{ lot.lotName }}</td>
+	<td>{{lot.maxCap}}</td>
+	<td>{{lot.imageSrc}}</td>
+</tr>
+{% endfor %}
+</table>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>Remove Lot: {{form.removeList}} <input type="submit"></p>
+    <p>
+    	Add Lot: <br> 
+    	{{form.lot_name.label}} {{form.lot_name(size=12)}} <br>
+    	{{form.lot_max.label}} {{form.lot_max(size=6)}} <br>
+    	{{form.lot_src.label}} {{form.lot_src(size=6)}} <br>
+    	<input type="submit">
+    </p>
+    
+    
+</form>
+{% endblock %}
