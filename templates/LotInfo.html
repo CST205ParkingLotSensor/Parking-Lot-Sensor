@@ -1,5 +1,15 @@
 <!-- templates/home.html -->
-<p>Lot #{{Lot.lotNum}}</p>
-<p>Current Occupancy: {{Lot.currOccp}}</p>
-<p>Maxium Occupancy: {{Lot.maxCap}}</p>
-<p>Remaining spots: {{Lot.maxCap - Lot.currOccp}}</p>
+{% extends 'base.html' %}
+
+{% block head %}
+<h1>Lot Info</h1>
+{% endblock %}
+
+{% block body %}
+
+    <p>Lot #{{Lot.lotNum}}</p>
+    <p>Current Occupancy: {{Lot.currOccp}}</p>
+    <p>Maxium Occupancy: {{Lot.maxCap}}</p>
+    <p>Remaining spots: {{Lot.maxCap - Lot.currOccp}}</p>
+
+{% endblock %}
