@@ -61,3 +61,7 @@ def mainPage():
 @app.route('/LotSensor/<lot_num>')
 def lot_info(lot_num):
     return render_template('LotInfo.html', Lot=Lots[int(lot_num) - 1])
+
+
+if __name__ == "__main__":
+    app.run(port=4996)
